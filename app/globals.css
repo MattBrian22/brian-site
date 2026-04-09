@@ -1,0 +1,149 @@
+/* Reset + base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f5f4f0;
+  color: #0a0a0a;
+}
+
+/* Typography scaling */
+h1 {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+}
+
+p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Sections */
+section {
+  padding: 4rem 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 6rem 0;
+  }
+}
+
+/* Grid helpers */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.button-primary {
+  background: #0a0a0a;
+  color: #f5f4f0;
+}
+
+.button-secondary {
+  border: 1px solid #0a0a0a;
+  color: #0a0a0a;
+}
+
+/* Mobile spacing fixes */
+@media (max-width: 640px) {
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .stat-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .principles-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Tablet tweaks */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .principles-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* Desktop refinement */
+@media (min-width: 1025px) {
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Subtle polish */
+button,
+a {
+  cursor: pointer;
+}
+
+a:hover {
+  opacity: 0.7;
+}
