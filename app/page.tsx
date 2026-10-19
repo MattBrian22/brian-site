@@ -2,8 +2,8 @@ import SectionLabel from "@/components/SectionLabel";
 
 // Contact details are not in the brief. Email is the address already used by
 // the old contact route. Set PHONE to show a phone line.
-const EMAIL = "brian.tahir@gmail.com";
-const PHONE = "";
+const EMAIL = "brian@veritaport.co.uk";
+const PHONE = "+447493012182";
 
 const procedure = [
   "Extracts the claims from the source material.",
