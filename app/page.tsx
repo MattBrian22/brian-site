@@ -1,254 +1,166 @@
-import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 
-const principles = [
-  {
-    id: "01",
-    title: "Decisions must be defensible",
-    body: "Every decision this system touches must be reproducible, traceable, and withstand external challenge. Defensibility is not optional—it is the minimum standard.",
-  },
-  {
-    id: "02",
-    title: "Evidence over opinion",
-    body: "Assertions without structured evidence are noise. The system accepts data, documentation, and verifiable inference. Nothing else qualifies.",
-  },
-  {
-    id: "03",
-    title: "The veto protects the system",
-    body: "When evidence is incomplete, contradictory, or unverifiable, the correct output is not a decision—it is a stop. The veto is a feature, not a failure.",
-  },
-  {
-    id: "04",
-    title: "Structure precedes scale",
-    body: "A decision made without a framework cannot be validated at volume. Governance must be established before velocity is introduced.",
-  },
-  {
-    id: "05",
-    title: "Chain of custody is non-negotiable",
-    body: "Who held the decision, when, and under what authority must be recorded. A decision without provenance is not a decision—it is a guess.",
-  },
+// Contact details are not in the brief. Email is the address already used by
+// the old contact route. Set PHONE to show a phone line.
+const EMAIL = "brian.tahir@gmail.com";
+const PHONE = "";
+
+const procedure = [
+  "Extracts the claims from the source material.",
+  "Verifies every quote word-for-word against the source.",
+  "Keeps what the code checked apart from what the model said.",
+  "Produces a sealed record that a reader can replay.",
 ];
+
+const notList = [
+  "It is not a research tool.",
+  "It is not an AI advisor.",
+  "It does not tell you what to do.",
+  "It does not certify the conclusion. It certifies the record is intact.",
+];
+
+const body = {
+  fontSize: "1.05rem",
+  lineHeight: 1.8,
+  color: "#2a2a2a",
+  maxWidth: "620px",
+  marginBottom: "1.25rem",
+} as const;
+
+const heading = {
+  fontFamily: "'DM Serif Display', Georgia, serif",
+  color: "#0a0a0a",
+  lineHeight: 1.2,
+  marginBottom: "1.5rem",
+} as const;
 
 export default function Home() {
   return (
     <div className="container">
-      {/* Hero */}
-      <section
-        style={{
-          padding: "8rem 0 6rem",
-          borderBottom: "1px solid #d4d0c8",
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gap: "4rem",
-        }}
-      >
-        <div>
-          <p
-            style={{
-              fontFamily: "'IBM Plex Mono', monospace",
-              fontSize: "0.6rem",
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-              color: "#6b6b6b",
-              marginBottom: "2rem",
-            }}
-          >
-            Decision Systems Engineer — VFS Protocol
-          </p>
-
-          <h1
-            style={{
-              fontFamily: "'DM Serif Display', Georgia, serif",
-              fontSize: "clamp(2.8rem, 6vw, 5.5rem)",
-              lineHeight: 1.05,
-              color: "#0a0a0a",
-              marginBottom: "2rem",
-              maxWidth: "900px",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            I design and validate decisions under uncertainty.
-          </h1>
-
-          <p
-            style={{
-              fontSize: "1.05rem",
-              lineHeight: 1.8,
-              color: "#6b6b6b",
-              maxWidth: "620px",
-              marginBottom: "3rem",
-            }}
-          >
-            The VFS Method — Validation & Forensic Standards — is a structured
-            protocol for producing defensible decisions in high-stakes
-            environments. It eliminates opinion as the primary input. It
-            replaces intuition with evidence. It documents everything.
-          </p>
-
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Link href="/vfs-method" className="button button-primary">
-              Read the Method
-            </Link>
-            <Link href="/case-files" className="button button-secondary">
-              Case Files
-            </Link>
-          </div>
-        </div>
-
-        {/* Stat strip */}
-        <div
-          className="stat-strip"
+      <section style={{ padding: "8rem 0 6rem", borderBottom: "1px solid #d4d0c8" }}>
+        <h1
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "0",
-            borderTop: "1px solid #d4d0c8",
-            paddingTop: "3rem",
+            ...heading,
+            fontSize: "clamp(2.8rem, 6vw, 5rem)",
+            maxWidth: "900px",
+            letterSpacing: "-0.02em",
           }}
         >
-          {[
-            { value: "47+", label: "Decisions Validated" },
-            { value: "£2.3B", label: "Assets Analysed" },
-            { value: "0", label: "Unvetoed Failures" },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              style={{
-                borderRight: i < 2 ? "1px solid #d4d0c8" : "none",
-                paddingRight: i < 2 ? "2rem" : "0",
-                paddingLeft: i > 0 ? "2rem" : "0",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "'DM Serif Display', Georgia, serif",
-                  fontSize: "2.2rem",
-                  color: "#0a0a0a",
-                  marginBottom: "0.25rem",
-                }}
-              >
-                {stat.value}
-              </p>
-              <p
-                style={{
-                  fontFamily: "'IBM Plex Mono', monospace",
-                  fontSize: "0.58rem",
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  color: "#6b6b6b",
-                }}
-              >
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Principles */}
-      <section style={{ padding: "6rem 0" }}>
-        <SectionLabel index="§ 1">Core Principles</SectionLabel>
-
-        <div
-          className="principles-grid"
+          A sealed record of what was checked.
+        </h1>
+        <p style={{ ...body, color: "#6b6b6b" }}>
+          VEC (VeritaPort Evidence &amp; Control) is a procedure. It produces
+          replayable records of what was checked against the source.
+        </p>
+        <p
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))",
-            gap: "0",
+            ...body,
+            borderLeft: "2px solid #0a0a0a",
+            paddingLeft: "1.5rem",
+            marginTop: "2rem",
           }}
         >
-          {principles.map((p, i) => (
-            <div
-              key={p.id}
-              style={{
-                padding: "2.5rem",
-                borderBottom: "1px solid #d4d0c8",
-                borderRight: i % 2 === 0 ? "1px solid #d4d0c8" : "none",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "'IBM Plex Mono', monospace",
-                  fontSize: "0.58rem",
-                  letterSpacing: "0.2em",
-                  color: "#6b6b6b",
-                  marginBottom: "1rem",
-                }}
-              >
-                {p.id}
-              </p>
-              <h3
-                style={{
-                  fontFamily: "'DM Serif Display', Georgia, serif",
-                  fontSize: "1.2rem",
-                  color: "#0a0a0a",
-                  marginBottom: "1rem",
-                  lineHeight: 1.3,
-                }}
-              >
-                {p.title}
-              </h3>
-              <p
-                style={{
-                  fontSize: "0.875rem",
-                  lineHeight: 1.75,
-                  color: "#6b6b6b",
-                }}
-              >
-                {p.body}
-              </p>
-            </div>
-          ))}
-        </div>
+          You know how you can&apos;t prove an email wasn&apos;t edited after
+          you sent it? This is the opposite.
+        </p>
       </section>
 
-      {/* VFS Intro */}
+      <section id="problem" style={{ scrollMarginTop: "64px" }}>
+        <SectionLabel>The problem</SectionLabel>
+        <p style={body}>
+          A signer approves a bundle, a report or a filing. They cannot have
+          read all of it.
+        </p>
+        <p style={body}>
+          Months later, in a dispute, they cannot prove what they did read.
+          The record is a memory, a note or an email. Any of those can be
+          edited.
+        </p>
+      </section>
+
       <section
-        style={{
-          padding: "5rem 0",
-          borderTop: "1px solid #d4d0c8",
-          display: "grid",
-          gap: "3rem",
-        }}
+        id="procedure"
+        style={{ scrollMarginTop: "64px", borderTop: "1px solid #d4d0c8" }}
       >
-        <div>
-          <SectionLabel index="§ 2">The Method</SectionLabel>
-          <h2
-            style={{
-              fontFamily: "'DM Serif Display', Georgia, serif",
-              fontSize: "1.8rem",
-              color: "#0a0a0a",
-              lineHeight: 1.2,
-            }}
-          >
-            Validation &<br />Forensic Standards
-          </h2>
-        </div>
-        <div>
-          <p
-            style={{
-              fontSize: "1rem",
-              lineHeight: 1.85,
-              color: "#4a4a4a",
-              marginBottom: "2rem",
-              borderLeft: "2px solid #0a0a0a",
-              paddingLeft: "1.5rem",
-            }}
-          >
-            VFS treats every decision as a live document. It passes through a
-            5-field intake, a structured validation process, and an
-            evidence-grading standard derived from Daubert precedent. The
-            output is not a recommendation — it is a decision packet that can
-            be challenged, audited, and defended.
+        <SectionLabel>The procedure</SectionLabel>
+        <ul style={{ ...body, paddingLeft: "1.25rem" }}>
+          {procedure.map((item) => (
+            <li key={item} style={{ marginBottom: "0.5rem" }}>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p style={body}>
+          The checks are deterministic verification, not model judgement.
+        </p>
+      </section>
+
+      <section
+        id="not"
+        style={{ scrollMarginTop: "64px", borderTop: "1px solid #d4d0c8" }}
+      >
+        <SectionLabel>What it is not</SectionLabel>
+        <ul style={{ ...body, paddingLeft: "1.25rem" }}>
+          {notList.map((item) => (
+            <li key={item} style={{ marginBottom: "0.5rem" }}>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p style={body}>
+          It doesn&apos;t prove you&apos;re right. It proves nobody touched the
+          evidence.
+        </p>
+      </section>
+
+      <section
+        id="status"
+        style={{ scrollMarginTop: "64px", borderTop: "1px solid #d4d0c8" }}
+      >
+        <SectionLabel>Status</SectionLabel>
+        <p style={body}>
+          Running on a deterministic test reporting platform in healthcare
+          compliance. Live integration in progress with a London disputes
+          practice.
+        </p>
+        <p style={body}>
+          Not yet in place: independent accuracy measurement, firm logins, and
+          a closed loop into client systems.
+        </p>
+      </section>
+
+      <section
+        id="about"
+        style={{ scrollMarginTop: "64px", borderTop: "1px solid #d4d0c8" }}
+      >
+        <SectionLabel>About</SectionLabel>
+        <p style={body}>
+          I&apos;m Matthew, a CS graduate. I am not a company. I built this
+          procedure myself. The procedure is my track record, so judge it on
+          what it does.
+        </p>
+      </section>
+
+      <section
+        id="contact"
+        style={{ scrollMarginTop: "64px", borderTop: "1px solid #d4d0c8" }}
+      >
+        <SectionLabel>Contact</SectionLabel>
+        <p style={body}>
+          <a href={`mailto:${EMAIL}`} style={{ textDecoration: "underline" }}>
+            {EMAIL}
+          </a>
+        </p>
+        {PHONE && (
+          <p style={body}>
+            <a
+              href={`tel:${PHONE.replace(/\s/g, "")}`}
+              style={{ textDecoration: "underline" }}
+            >
+              {PHONE}
+            </a>
           </p>
-          <Link
-            href="/vfs-method"
-            className="button"
-            style={{ borderBottom: "1px solid #0a0a0a" }}
-          >
-            Full methodology →
-          </Link>
-        </div>
+        )}
       </section>
     </div>
   );

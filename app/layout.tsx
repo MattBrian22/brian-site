@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Matthew Brian Tahir — Decision Systems Engineer",
+  title: "VEC (VeritaPort Evidence & Control)",
   description:
-    "I design and validate decisions under uncertainty. Founder of the VFS Method — a structured protocol for high-stakes decision integrity.",
+    "A procedure that produces sealed, replayable records of what was checked against the source.",
 };
 
 // app/layout.tsx
