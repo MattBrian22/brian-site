@@ -1,7 +1,7 @@
 import Diagram from "@/components/Diagram";
 import CalendarLoader from "@/components/CalendarLoader";
 import RevealController from "@/components/RevealController";
-import { Confirm, Ph } from "@/components/Marks";
+import { Confirm } from "@/components/Marks";
 
 const CAL_DISCOVERY =
   "https://cal.com/matthew-brian-tahir-hfneah/20mindiscoverycall";
@@ -194,7 +194,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="wrap">
-          <Ph>[EMAIL]</Ph> ·{" "}
+          <a href="mailto:brian@veritaport.co.uk">brian@veritaport.co.uk</a> ·{" "}
           <a href={LINKEDIN} rel="noopener noreferrer">
             LinkedIn
           </a>
