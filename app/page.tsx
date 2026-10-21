@@ -4,7 +4,10 @@ import CalendarLoader from "@/components/CalendarLoader";
 import RevealController from "@/components/RevealController";
 import { Confirm, Ph } from "@/components/Marks";
 
-const LINKEDIN = "https://www.linkedin.com/in/matthew-brian-tahir-725486251/";
+const CAL_DISCOVERY =
+  "https://cal.com/matthew-brian-tahir-hfneah/20mindiscoverycall";
+const CAL_RETAINER = "https://cal.com/matthew-brian-tahir-hfneah/retainer";
+const LINKEDIN ="https://www.linkedin.com/in/matthew-brian-tahir-725486251/";
 
 export default function Home() {
   return (
@@ -32,9 +35,8 @@ export default function Home() {
               CS graduate · Operations analysis · Evidence verification
             </p>
             <p className="pull">
-              How do you build systems that help people make consequential
-              decisions without losing sight of the evidence, the numbers or
-              the consequences?
+              How do you make a decision you can stand behind when someone
+              asks you to prove it?
             </p>
           </div>
         </section>
@@ -180,7 +182,11 @@ export default function Home() {
 
             <div className="cards">
               <article className="card">
-                <h3>20-Minute Discovery</h3>
+                <h3>
+                  <a href={CAL_DISCOVERY} rel="noopener noreferrer">
+                    20-Minute Discovery
+                  </a>
+                </h3>
                 <p>
                   We discuss your current challenges with AI, document
                   verification and defensibility. If it is a fit, I will invite
@@ -188,7 +194,11 @@ export default function Home() {
                 </p>
               </article>
               <article className="card">
-                <h3>Specialist Retainer</h3>
+                <h3>
+                  <a href={CAL_RETAINER} rel="noopener noreferrer">
+                    Specialist Retainer
+                  </a>
+                </h3>
                 <p>
                   Monthly engagement. Covers running the procedure on live
                   matters, producing signed records, and{" "}
