@@ -1,5 +1,4 @@
 import Diagram from "@/components/Diagram";
-import DiscoveryForm from "@/components/DiscoveryForm";
 import CalendarLoader from "@/components/CalendarLoader";
 import RevealController from "@/components/RevealController";
 import { Confirm, Ph } from "@/components/Marks";
@@ -166,9 +165,7 @@ export default function Home() {
             </p>
 
             <div className="band-split">
-              <DiscoveryForm />
               <CalendarLoader
-                heading="Prefer to pick a time directly?"
                 options={[{ label: "20-Minute Discovery", url: CAL_DISCOVERY }]}
               />
             </div>

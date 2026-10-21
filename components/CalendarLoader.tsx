@@ -5,20 +5,12 @@ import { useState } from "react";
 type Option = { label: string; url: string };
 
 // Nothing from cal.com is requested until the visitor picks a calendar.
-export default function CalendarLoader({
-  heading,
-  options,
-}: {
-  heading: string;
-  options: Option[];
-}) {
+export default function CalendarLoader({ options }: { options: Option[] }) {
   const [selected, setSelected] = useState<number | null>(null);
   const active = selected === null ? null : options[selected];
 
   return (
     <div>
-      <h3 className="band-h3">{heading}</h3>
-
       <div className="cal-choices">
         {options.map((option, i) => (
           <button
