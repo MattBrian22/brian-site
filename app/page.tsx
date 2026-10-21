@@ -6,7 +6,6 @@ import { Confirm, Ph } from "@/components/Marks";
 
 const CAL_DISCOVERY =
   "https://cal.com/matthew-brian-tahir-hfneah/20mindiscoverycall";
-const CAL_RETAINER = "https://cal.com/matthew-brian-tahir-hfneah/retainer";
 const LINKEDIN ="https://www.linkedin.com/in/matthew-brian-tahir-725486251/";
 
 export default function Home() {
@@ -170,10 +169,7 @@ export default function Home() {
               <DiscoveryForm />
               <CalendarLoader
                 heading="Prefer to pick a time directly?"
-                options={[
-                  { label: "20-Minute Discovery", url: CAL_DISCOVERY },
-                  { label: "Specialist Retainer", url: CAL_RETAINER },
-                ]}
+                options={[{ label: "20-Minute Discovery", url: CAL_DISCOVERY }]}
               />
             </div>
 
