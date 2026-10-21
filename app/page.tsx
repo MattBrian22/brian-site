@@ -1,7 +1,6 @@
 import Diagram from "@/components/Diagram";
 import CalendarLoader from "@/components/CalendarLoader";
 import RevealController from "@/components/RevealController";
-import { Confirm } from "@/components/Marks";
 
 const CAL_DISCOVERY =
   "https://cal.com/matthew-brian-tahir-hfneah/20mindiscoverycall";
@@ -156,10 +155,6 @@ export default function Home() {
             <p className="eyebrow">PRIVATE VIEWINGS</p>
             <h2>Book a discovery call</h2>
             <p className="band-sub">
-              <Confirm>
-                &quot;I take on a small number of specialist engagements.&quot;
-                Keep only if true.
-              </Confirm>{" "}
               We discuss your AI and verification challenges before I show you
               the procedure.
             </p>
