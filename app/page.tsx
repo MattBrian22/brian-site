@@ -138,15 +138,6 @@ export default function Home() {
             <div className="entry-body">
               <h2>What is next</h2>
               <p>
-                <Confirm>
-                  add a source, or keep &quot;some&quot; and name the
-                  profession. Some firms are restructuring their first two
-                  years, and professional bodies are rewriting their frameworks
-                  around demonstrated competence. The standard is shifting from
-                  job-ready to judgment-ready.
-                </Confirm>
-              </p>
-              <p>
                 That shift calls for a new procedure. Not a better model, but a
                 record that shows what the person checked, how they reasoned,
                 and what they signed off on.

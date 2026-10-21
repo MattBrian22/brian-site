@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Ph } from "@/components/Marks";
 
 // Replace with the real endpoint. Until then, sending shows the error message.
 const FORM_ENDPOINT = "[FORM ENDPOINT]";
@@ -195,10 +194,6 @@ export default function DiscoveryForm() {
           The request could not be sent. Please try again.
         </p>
       )}
-
-      <p className="field-note">
-        <Ph>[PRIVACY NOTICE LINK]</Ph>
-      </p>
     </form>
   );
 }
