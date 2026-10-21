@@ -606,8 +606,16 @@ section[id] {
   font-size: 1rem;
 }
 
-.card-cal {
-  margin-top: 24px;
+.cal-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-ghost[aria-pressed="true"] {
+  background: var(--band-fg);
+  color: var(--band-bg);
 }
 
 /* ---------- Footer ---------- */

@@ -169,9 +169,11 @@ export default function Home() {
             <div className="band-split">
               <DiscoveryForm />
               <CalendarLoader
-                url={CAL_DISCOVERY}
-                title="Calendar for booking a 20-minute discovery call"
                 heading="Prefer to pick a time directly?"
+                options={[
+                  { label: "20-Minute Discovery", url: CAL_DISCOVERY },
+                  { label: "Specialist Retainer", url: CAL_RETAINER },
+                ]}
               />
             </div>
 
@@ -183,12 +185,6 @@ export default function Home() {
                   verification and defensibility. If it is a fit, I will invite
                   you to a private viewing of the procedure.
                 </p>
-                <div className="card-cal">
-                  <CalendarLoader
-                    url={CAL_DISCOVERY}
-                    title="Calendar for booking a 20-minute discovery call"
-                  />
-                </div>
               </article>
               <article className="card">
                 <h3>Specialist Retainer</h3>
@@ -197,12 +193,6 @@ export default function Home() {
                   matters, producing signed records, and integrating with your
                   existing infrastructure (BYOM). From £750 per month.
                 </p>
-                <div className="card-cal">
-                  <CalendarLoader
-                    url={CAL_RETAINER}
-                    title="Calendar for booking a specialist retainer call"
-                  />
-                </div>
               </article>
             </div>
           </div>
