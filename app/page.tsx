@@ -1,167 +1,216 @@
-import SectionLabel from "@/components/SectionLabel";
+import Diagram from "@/components/Diagram";
+import DiscoveryForm from "@/components/DiscoveryForm";
+import CalendarLoader from "@/components/CalendarLoader";
+import RevealController from "@/components/RevealController";
+import { Confirm, Ph } from "@/components/Marks";
 
-// Contact details are not in the brief. Email is the address already used by
-// the old contact route. Set PHONE to show a phone line.
-const EMAIL = "brian@veritaport.co.uk";
-const PHONE = "+447493012182";
-
-const procedure = [
-  "Extracts the claims from the source material.",
-  "Verifies every quote word-for-word against the source.",
-  "Keeps what the code checked apart from what the model said.",
-  "Produces a sealed record that a reader can replay.",
-];
-
-const notList = [
-  "It is not a research tool.",
-  "It is not an AI advisor.",
-  "It does not tell you what to do.",
-  "It does not certify the conclusion. It certifies the record is intact.",
-];
-
-const body = {
-  fontSize: "1.05rem",
-  lineHeight: 1.8,
-  color: "#2a2a2a",
-  maxWidth: "620px",
-  marginBottom: "1.25rem",
-} as const;
-
-const heading = {
-  fontFamily: "'DM Serif Display', Georgia, serif",
-  color: "#0a0a0a",
-  lineHeight: 1.2,
-  marginBottom: "1.5rem",
-} as const;
+const LINKEDIN = "https://www.linkedin.com/in/matthew-brian-tahir-725486251/";
 
 export default function Home() {
   return (
-    <div className="container">
-      <section style={{ padding: "8rem 0 6rem", borderBottom: "1px solid #d4d0c8" }}>
-        <h1
-          style={{
-            ...heading,
-            fontSize: "clamp(2.8rem, 6vw, 5rem)",
-            maxWidth: "900px",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          A sealed record of what was checked.
-        </h1>
-        <p style={{ ...body, color: "#6b6b6b" }}>
-          VEC (VeritaPort Evidence &amp; Control) is a procedure. It produces
-          replayable records of what was checked against the source.
-        </p>
-        <p
-          style={{
-            ...body,
-            borderLeft: "2px solid #0a0a0a",
-            paddingLeft: "1.5rem",
-            marginTop: "2rem",
-          }}
-        >
-          You know how you can&apos;t prove an email wasn&apos;t edited after
-          you sent it? This is the opposite.
-        </p>
-      </section>
+    <>
+      <RevealController />
 
-      <section id="problem" style={{ scrollMarginTop: "64px" }}>
-        <SectionLabel>The problem</SectionLabel>
-        <p style={body}>
-          A signer approves a bundle, a report or a filing. They cannot have
-          read all of it.
-        </p>
-        <p style={body}>
-          Months later, in a dispute, they cannot prove what they did read.
-          The record is a memory, a note or an email. Any of those can be
-          edited.
-        </p>
-      </section>
-
-      <section
-        id="procedure"
-        style={{ scrollMarginTop: "64px", borderTop: "1px solid #d4d0c8" }}
-      >
-        <SectionLabel>The procedure</SectionLabel>
-        <ul style={{ ...body, paddingLeft: "1.25rem" }}>
-          {procedure.map((item) => (
-            <li key={item} style={{ marginBottom: "0.5rem" }}>
-              {item}
-            </li>
-          ))}
-        </ul>
-        <p style={body}>
-          The checks are deterministic verification, not model judgement.
-        </p>
-      </section>
-
-      <section
-        id="not"
-        style={{ scrollMarginTop: "64px", borderTop: "1px solid #d4d0c8" }}
-      >
-        <SectionLabel>What it is not</SectionLabel>
-        <ul style={{ ...body, paddingLeft: "1.25rem" }}>
-          {notList.map((item) => (
-            <li key={item} style={{ marginBottom: "0.5rem" }}>
-              {item}
-            </li>
-          ))}
-        </ul>
-        <p style={body}>
-          It doesn&apos;t prove you&apos;re right. It proves nobody touched the
-          evidence.
-        </p>
-      </section>
-
-      <section
-        id="status"
-        style={{ scrollMarginTop: "64px", borderTop: "1px solid #d4d0c8" }}
-      >
-        <SectionLabel>Status</SectionLabel>
-        <p style={body}>
-          Running on a deterministic test reporting platform in healthcare
-          compliance. Live integration in progress with a London disputes
-          practice.
-        </p>
-        <p style={body}>
-          Not yet in place: independent accuracy measurement, firm logins, and
-          a closed loop into client systems.
-        </p>
-      </section>
-
-      <section
-        id="about"
-        style={{ scrollMarginTop: "64px", borderTop: "1px solid #d4d0c8" }}
-      >
-        <SectionLabel>About</SectionLabel>
-        <p style={body}>
-          I&apos;m Matthew, a CS graduate. I am not a company. I built this
-          procedure myself. The procedure is my track record, so judge it on
-          what it does.
-        </p>
-      </section>
-
-      <section
-        id="contact"
-        style={{ scrollMarginTop: "64px", borderTop: "1px solid #d4d0c8" }}
-      >
-        <SectionLabel>Contact</SectionLabel>
-        <p style={body}>
-          <a href={`mailto:${EMAIL}`} style={{ textDecoration: "underline" }}>
-            {EMAIL}
+      <header className="site-header">
+        <div className="wrap site-header-row">
+          <a href="#top" className="site-name">
+            Matthew Brian Tahir
           </a>
-        </p>
-        {PHONE && (
-          <p style={body}>
-            <a
-              href={`tel:${PHONE.replace(/\s/g, "")}`}
-              style={{ textDecoration: "underline" }}
-            >
-              {PHONE}
-            </a>
-          </p>
-        )}
-      </section>
-    </div>
+          <nav aria-label="Page sections">
+            <a href="#why">Why</a>
+            <a href="#built">What I built</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="top">
+        <section className="hero">
+          <div className="wrap">
+            <h1>Matthew Brian Tahir</h1>
+            <p className="hero-meta">
+              CS graduate · Operations analysis · Evidence verification
+            </p>
+            <p className="pull">
+              How do you build systems that help people make consequential
+              decisions without losing sight of the evidence, the numbers or
+              the consequences?
+            </p>
+          </div>
+        </section>
+
+        <section id="why" className="wrap" data-reveal>
+          <div className="entry grid12">
+            <p className="entry-label">01 / WHY</p>
+            <div className="entry-body">
+              <h2>Where the thinking began</h2>
+              <p>
+                I started out studying Computer Science at Aston University,
+                but I became more interested in a gap that the field tends to
+                overlook: the gap between an impressive analysis and a
+                defensible one.
+              </p>
+              <p>
+                My final-year project made that gap concrete. Every week, my
+                supervisor asked me to prove that my analysis was rigorous. Not
+                just to show the result, but to show the workings, and to
+                explain the why behind every claim. I had to document every
+                step, cite every source, and defend the route I had taken.
+              </p>
+              <p>
+                That experience taught me that an analysis is only as valuable
+                as its ability to withstand scrutiny. The work is not the
+                answer. The work is the proof that the answer is grounded.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="evidence" className="wrap" data-reveal>
+          <div className="entry grid12">
+            <p className="entry-label">02 / EVIDENCE</p>
+            <div className="entry-body">
+              <h2>
+                Learning how to turn an analysis into evidence that you can
+                stand behind
+              </h2>
+              <p>
+                Early on, I noticed that the most impressive analysis is often
+                the least defensible. A model produces a clean projection. A
+                junior analyst writes a confident summary. The numbers look
+                reasonable. But when the decision gets challenged, nobody can
+                point to the exact sentence in the source document that
+                justifies it.
+              </p>
+              <p>
+                I became more interested in the gap between the analysis and
+                the evidence. Why does a decision that looks sound on the day
+                it is made become impossible to defend six months later? The
+                answer is usually not that the analysis was wrong. It is that
+                the route from the evidence to the conclusion was never
+                recorded.
+              </p>
+              <p>
+                That is what I build now. Not better analysis. The record that
+                shows the analysis was grounded in the evidence.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="built" className="wrap" data-reveal>
+          <div className="entry grid12">
+            <p className="entry-label">03 / WHAT I BUILT</p>
+            <div className="entry-body">
+              <h2>What I built</h2>
+              <p>
+                A procedure. It takes a bundle of documents, checks every
+                quotation word for word against the source, and produces a
+                signed record that can be replayed. The model writes. The
+                program checks.
+              </p>
+            </div>
+
+            <figure className="figure" data-draw>
+              <figcaption className="aside">
+                The model writes. The program checks.
+              </figcaption>
+              <div className="figure-art">
+                <Diagram />
+              </div>
+            </figure>
+
+            <div className="entry-body entry-body-after">
+              <p>
+                It does not certify the conclusion. It records the route. The
+                seal shows that the record has not been altered since it was
+                sealed, within what the seal covers today.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="next" className="wrap" data-reveal>
+          <div className="entry grid12">
+            <p className="entry-label">04 / WHAT IS NEXT</p>
+            <div className="entry-body">
+              <h2>What is next</h2>
+              <p>
+                <Confirm>
+                  add a source, or keep &quot;some&quot; and name the
+                  profession. Some firms are restructuring their first two
+                  years, and professional bodies are rewriting their frameworks
+                  around demonstrated competence. The standard is shifting from
+                  job-ready to judgment-ready.
+                </Confirm>
+              </p>
+              <p>
+                That shift calls for a new procedure. Not a better model, but a
+                record that shows what the person checked, how they reasoned,
+                and what they signed off on.
+              </p>
+              <p>
+                I built the procedure, and I am looking for professionals who
+                are already held to that standard to run it with. If your firm
+                is restructuring the way it trains, verifies, or defends its
+                conclusions, I would rather show you the procedure than ask you
+                to trust it.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="band" data-reveal>
+          <div className="wrap">
+            <p className="eyebrow">PRIVATE VIEWINGS</p>
+            <h2>Book a discovery call</h2>
+            <p className="band-sub">
+              <Confirm>
+                &quot;I take on a small number of specialist engagements.&quot;
+                Keep only if true.
+              </Confirm>{" "}
+              We discuss your AI and verification challenges before I show you
+              the procedure.
+            </p>
+
+            <div className="band-split">
+              <DiscoveryForm />
+              <CalendarLoader />
+            </div>
+
+            <div className="cards">
+              <article className="card">
+                <h3>20-Minute Discovery</h3>
+                <p>
+                  We discuss your current challenges with AI, document
+                  verification and defensibility. If it is a fit, I will invite
+                  you to a private viewing of the procedure.
+                </p>
+              </article>
+              <article className="card">
+                <h3>Specialist Retainer</h3>
+                <p>
+                  Monthly engagement. Covers running the procedure on live
+                  matters, producing signed records, and{" "}
+                  <Confirm>
+                    integrating with your existing infrastructure (BYOM)
+                  </Confirm>
+                  . <Confirm>From £750 per month.</Confirm>
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="site-footer">
+        <div className="wrap">
+          <Ph>[EMAIL]</Ph> ·{" "}
+          <a href={LINKEDIN} rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </div>
+      </footer>
+    </>
   );
 }
