@@ -203,11 +203,8 @@ export default function Home() {
                 <h3>Specialist Retainer</h3>
                 <p>
                   Monthly engagement. Covers running the procedure on live
-                  matters, producing signed records, and{" "}
-                  <Confirm>
-                    integrating with your existing infrastructure (BYOM)
-                  </Confirm>
-                  . <Confirm>From £750 per month.</Confirm>
+                  matters, producing signed records, and integrating with your
+                  existing infrastructure (BYOM). From £750 per month.
                 </p>
                 <div className="card-cal">
                   <CalendarLoader
