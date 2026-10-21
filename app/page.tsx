@@ -177,28 +177,30 @@ export default function Home() {
 
             <div className="band-split">
               <DiscoveryForm />
-              <CalendarLoader />
+              <CalendarLoader
+                url={CAL_DISCOVERY}
+                title="Calendar for booking a 20-minute discovery call"
+                heading="Prefer to pick a time directly?"
+              />
             </div>
 
             <div className="cards">
               <article className="card">
-                <h3>
-                  <a href={CAL_DISCOVERY} rel="noopener noreferrer">
-                    20-Minute Discovery
-                  </a>
-                </h3>
+                <h3>20-Minute Discovery</h3>
                 <p>
                   We discuss your current challenges with AI, document
                   verification and defensibility. If it is a fit, I will invite
                   you to a private viewing of the procedure.
                 </p>
+                <div className="card-cal">
+                  <CalendarLoader
+                    url={CAL_DISCOVERY}
+                    title="Calendar for booking a 20-minute discovery call"
+                  />
+                </div>
               </article>
               <article className="card">
-                <h3>
-                  <a href={CAL_RETAINER} rel="noopener noreferrer">
-                    Specialist Retainer
-                  </a>
-                </h3>
+                <h3>Specialist Retainer</h3>
                 <p>
                   Monthly engagement. Covers running the procedure on live
                   matters, producing signed records, and{" "}
@@ -207,6 +209,12 @@ export default function Home() {
                   </Confirm>
                   . <Confirm>From £750 per month.</Confirm>
                 </p>
+                <div className="card-cal">
+                  <CalendarLoader
+                    url={CAL_RETAINER}
+                    title="Calendar for booking a specialist retainer call"
+                  />
+                </div>
               </article>
             </div>
           </div>

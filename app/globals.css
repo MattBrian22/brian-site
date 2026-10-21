@@ -606,6 +606,10 @@ section[id] {
   font-size: 1rem;
 }
 
+.card-cal {
+  margin-top: 24px;
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   padding: 40px 0 56px;
